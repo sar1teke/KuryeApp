@@ -1,5 +1,5 @@
 // src/App.jsx
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import RouteGuard from './components/RouteGuard';
 
 // Sayfalar
@@ -25,7 +25,7 @@ import MusteriTakip from './pages/ortak/MusteriTakip';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Giris />} />
 
@@ -52,7 +52,7 @@ function App() {
         {/* PUBLIC — Müşteri Takip */}
         <Route path="/takip/:token" element={<MusteriTakip />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

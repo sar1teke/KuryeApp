@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# WhatsApp Cache ve Server Dosyaları
+server/.wwebjs_auth/
+server/node_modules/
+.wwebjs_auth/
