@@ -1,16 +1,45 @@
-# React + Vite
+# 🚀 Kurye & Restoran Yönetim Sistemi (KuryeApp)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern web teknolojileri (React + Vite + Tailwind CSS) kullanılarak geliştirilmiş, restoran sahipleri (Esnaf) ve Kuryeler için tasarlanmış tam kapsamlı bir **POS, CRM ve Sipariş Takip Otomasyonu**.
 
-Currently, two official plugins are available:
+Bu proje, karmaşık masaüstü yazılımlarının yerine, her cihazda (Masaüstü, Tablet, Mobil) kusursuz çalışan, hızlı ve modern bir "SaaS" (Hizmet olarak yazılım) mimarisi hedeflenerek oluşturulmuştur.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Öne Çıkan Özellikler
 
-## React Compiler
+### 🏢 Esnaf (Restoran) Paneli
+* **📊 Akıllı Dashboard:** Günlük ciro, bekleyen siparişler ve yoldaki paketlerin anlık özeti.
+* **🛒 Gelişmiş POS Ekranı:** Hızlı ürün seçimi, sepette ürün gruplama (örn: *3x Lahmacun*), anlık tutar hesaplama ve detaylı müşteri kaydı.
+* **🔄 Sipariş İş Akışı (Workflow):** Siparişleri "Hazırlanıyor ➔ Yolda ➔ Teslim Edildi" adımlarıyla tek tuşla yönetme.
+* **📈 Finansal Raporlar:** `Recharts` entegrasyonu ile haftalık ciro analizi ve en çok satan ürünlerin grafiksel dökümü.
+* **👥 Müşteri Veritabanı (CRM):** Sadık müşterileri, toplam harcamalarını ve sipariş sıklıklarını otomatik takip eden akıllı liste.
+* **🍽️ Menü Yönetimi:** Yeni ürün ekleme, kategorilendirme ve fiyatlandırma.
+* **🗑️ Çöp Kutusu:** İptal edilen siparişleri saklama ve istendiğinde geri yükleme yeteneği.
+* **⚙️ Dükkan Ayarları:** Tek tuşla dükkanı açma/kapatma, minimum paket tutarı ve "Yoğunluk Modu" belirleme.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🛵 Kurye Paneli (Mobil Uyumlu)
+* **📱 Koyu Tema (Dark Mode):** Gece sürüşlerinde göz yormayan, başparmakla kullanıma uygun devasa butonlar.
+* **📍 Canlı Harita (Yakında):** `Leaflet` ile sipariş adresini ve kuryenin anlık konumunu haritada gösterme.
 
-## Expanding the ESLint configuration
+## 🛠️ Kullanılan Teknolojiler
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend Framework:** React 18
+* **Build Tool:** Vite (Ultra hızlı derleme)
+* **Styling:** Tailwind CSS v3 (Tamamen responsive yapı)
+* **Routing:** React Router DOM v6
+* **Data Visualization:** Recharts
+* **Mimari:** Service-Oriented Architecture (Gelecekteki backend entegrasyonu için izole edilmiş `api/` katmanı)
+
+## 📂 Proje Yapısı (Feature-Based)
+
+```text
+src/
+├── api/             # Backend simülasyonları (Mock Data & Services)
+├── components/      # Ortak bileşenler (Butonlar, Inputlar)
+├── features/        # Ana iş mantığına göre ayrılmış modüller
+│   └── esnaf/       # Esnaf paneline özel bileşenler (Kartlar, Modallar)
+├── layouts/         # Sayfa şablonları (Esnaf Sidebar Layout vb.)
+├── pages/           # Sayfa görünümleri ve rota bağlayıcıları
+│   ├── esnaf/       # Dashboard, POS, Ayarlar sayfaları
+│   ├── kurye/       # Mobil kurye sayfaları
+│   └── ortak/       # Giriş / Rol seçim ekranı
+└── App.jsx          # Ana yönlendirme (Router)
