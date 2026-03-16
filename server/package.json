@@ -1,0 +1,23 @@
+{
+    "name": "kurye-backend",
+    "version": "1.0.0",
+    "description": "WhatsApp Integration Backend",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+    },
+    "dependencies": {
+        "bcryptjs": "^3.0.3",
+        "better-sqlite3": "^12.6.2",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.3",
+        "qrcode": "^1.5.3",
+        "socket.io": "^4.8.3",
+        "whatsapp-web.js": "^1.23.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.3"
+    }
+}
