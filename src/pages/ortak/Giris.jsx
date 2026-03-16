@@ -14,7 +14,7 @@ const Giris = () => {
   const [yukleniyor, setYukleniyor] = useState(false);
 
   if (AuthServisi.girisYapilmisMi()) {
-    window.location.href = AuthServisi.getRol() === 'kurye' ? '/kurye' : '/esnaf';
+    window.location.hash = AuthServisi.getRol() === 'kurye' ? '#/kurye' : '#/esnaf';
     return null;
   }
 
@@ -25,7 +25,7 @@ const Giris = () => {
       const data = mod === 'login'
         ? await AuthServisi.login(email, sifre)
         : await AuthServisi.register(ad, soyad, email, sifre, rol);
-      navigate(data.kullanici.rol === 'kurye' ? '/kurye' : '/esnaf');
+      window.location.hash = data.kullanici.rol === 'kurye' ? '#/kurye' : '#/esnaf';
     } catch (err) { setHata(err.message); }
     finally { setYukleniyor(false); }
   };
